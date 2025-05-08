@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-function App() {
+const App = () => {
   const [value, setValue] = useState({
     fullname: "",
     email: "",
@@ -117,6 +117,6 @@ function App() {
       </form>
     </div>
   );
-}
+};
 
 export default App;
