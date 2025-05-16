@@ -20,14 +20,14 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   height: 500px;
   width: 850px;
+  overflow: hidden;
 }
 
 .form-box {
   position: absolute;
-  right: 0;
+  right: -8px;
   width: 50%;
   height: 100%;
-  background: gray;
   z-index: 1;
 }
 
@@ -53,7 +53,7 @@ label {
 input {
   width: 90%;
   padding: 10px;
-  background: white;
+  background: lightgray;
   border-radius: 8px;
   border: none;
   outline: none;
@@ -84,11 +84,11 @@ label[for="employee"] {
 }
 
 button {
-  width: 100%;
+  width: 90%;
   height: 38px;
   margin-top: 20px;
   padding: 10px;
-  background-color: #6b7280;
+  background-color: #7494ec;
   border-radius: 8px;
   color: white;
   border: none;
@@ -108,14 +108,29 @@ button:hover {
   height: 100%;
 }
 
+.toggle-box::before {
+  content: "";
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  background: #7494ec;
+  border-radius: 150px;
+  z-index: 2;
+}
+
 .toggle-panel {
   position: absolute;
   width: 50%;
   height: 100%;
-  background: rgb(47, 71, 12);
-  color: white;
+  /* background: rgb(47, 71, 12); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 3;
+}
+
+.toggle-panel h1 {
+  color: white;
 }
