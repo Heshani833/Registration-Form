@@ -5,9 +5,10 @@ const App = () => {
   const [value, setValue] = useState({
     fullname: "",
     email: "",
+    password: "",
     role: "",
-    schoolName: "",
-    schoolLocation: "",
+    universityName: "",
+    universityLocation: "",
     companyName: "",
     position: "",
   });
@@ -23,10 +24,15 @@ const App = () => {
 
   return (
     <div className="container">
-      {/* pp */}
       <div className="form-box login">
+        <div className="toggle-box-mobile">
+          <h1>Welcome to InternQuest</h1>
+          <button className="btn register-btn" type="button">
+            Sign Up
+          </button>
+        </div>
         <h1>User Information Form</h1>
-        <form onSubmit={handleSubmit}>
+        <form>
           <label htmlFor="fullname">Full Name</label>
           <input
             type="text"
@@ -41,6 +47,15 @@ const App = () => {
             type="email"
             placeholder="Enter your email"
             name="email"
+            onChange={handleChange}
+            required
+          />
+
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            name="password"
             onChange={handleChange}
             required
           />
@@ -73,20 +88,20 @@ const App = () => {
 
           {value.role === "student" && (
             <>
-              <label htmlFor="schoolName">School Name</label>
+              <label htmlFor="universityName">University Name</label>
               <input
                 type="text"
-                placeholder="Enter your school name"
-                name="schoolName"
+                placeholder="Enter your university name"
+                name="universityName"
                 onChange={handleChange}
                 required
               />
 
-              <label htmlFor="schoolLocation">School Location</label>
+              <label htmlFor="universityLocation">University Location</label>
               <input
                 type="text"
-                placeholder="Enter your school location"
-                name="schoolLocation"
+                placeholder="Enter your university location"
+                name="universityLocation"
                 onChange={handleChange}
                 required
               />
@@ -115,12 +130,17 @@ const App = () => {
             </>
           )}
 
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
         </form>
       </div>
       <div className="toggle-box">
         <div className="toggle-panel toggle-left">
           <h1>Welcome to InternQuest</h1>
+          <button className="btn register-btn" type="button">
+            Sign Up
+          </button>
         </div>
       </div>
     </div>
